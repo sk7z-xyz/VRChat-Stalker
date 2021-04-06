@@ -537,6 +537,7 @@ namespace VRChat_Stalker
                     target.Update(user);
                 }
             }
+            SortUsers(SortTypes.Star);
         }
 
         public void FilterUsers(string filter, FilterTypes? filterType = null)
@@ -665,9 +666,11 @@ namespace VRChat_Stalker
                                     .ToList();
                             }
                         }
-                        else
+                        else if (instance != null)
                         {
                             user.StatusText = world.name;
+                            user.InstanceOccupant = string.Format("({0}/{1})", instance.n_users,instance.capacity);
+
                         }
                     }
                 }
