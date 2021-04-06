@@ -135,12 +135,13 @@ namespace VRChat_Stalker
 
         public ObservableCollection<string> UserTags { get; set; } = new ObservableCollection<string>();
 
-        private void Join()
+        public void Join()
         {
             string worldId = User.WorldId;
             string instId = User.InstanceId;
-
-            string uri = $"https://vrchat.net/launch?worldId={worldId}&instanceId={instId}";
+            
+            string uri = $"vrchat://launch?ref=vrchat.com&id={worldId}:{instId}";
+            
 
             System.Diagnostics.Process.Start(uri);
         }

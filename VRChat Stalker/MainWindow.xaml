@@ -302,6 +302,10 @@
                                                 Style="{StaticResource MaterialDesignSwitchDarkToggleButton}"
                                                 ToolTip="Set whether to stalk."
                                                 IsChecked="{Binding IsTracked, Mode=TwoWay}" />
+                                      <Button Height="Auto" VerticalAlignment="Bottom" Margin="4,0,0,18" Grid.Column="3"
+                                                Click="Join_Click">
+                                        Join
+                                      </Button>
                                     </Grid>
                                 </materialDesign:Card>
                             </DataTemplate>

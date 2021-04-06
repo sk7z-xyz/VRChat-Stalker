@@ -248,6 +248,24 @@ namespace VRChat_Stalker
             profileWin.ShowDialog();
             profileWin.Close();
         }
+        private void Join_Click(object sender, RoutedEventArgs e)
+        {
+            var user = ((ListBoxItem)listUser.ContainerFromElement((Button)sender)).Content as VRCUser;
+
+            if (user == null)
+            {
+                return;
+            }
+
+            var profile_Vm = new ProfileVM();
+            profile_Vm.Vrc = Vm.Vrc;
+            profile_Vm.User = user;
+            if (profile_Vm.CanJoin)
+            {
+                profile_Vm.Join();
+            }
+
+        }
 
         private async void DialogHost_DialogClosing(object sender, MaterialDesignThemes.Wpf.DialogClosingEventArgs eventArgs)
         {
