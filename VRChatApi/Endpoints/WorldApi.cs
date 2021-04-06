@@ -142,6 +142,8 @@ namespace VRChatApi.Endpoints
                         ? json["friends"].Select(tk => tk.ToObject<WorldInstanceUserResponse>()).ToList() : null,
                     users = (json["users"] is JArray)
                         ? json["users"].Select(tk => tk.ToObject<WorldInstanceUserResponse>()).ToList() : null,
+                    n_users = (json["n_users"] == null || json["n_users"].Type == JTokenType.Null) ? null : json["n_users"].ToString(),
+                    capacity = (json["capacity"] == null || json["capacity"].Type == JTokenType.Null) ? null : json["capacity"].ToString(),
                     hidden = (json["hidden"] == null || json["hidden"].Type == JTokenType.Null) ? null : json["hidden"].ToString(),
                     nonce = (json["nonce"] == null) ? null : json["nonce"].ToString(),
                 };

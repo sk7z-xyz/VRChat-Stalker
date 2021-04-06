@@ -16,6 +16,9 @@ namespace VRChatApi.Classes
         public List<WorldInstanceUserResponse> privateUsers { get; set; }
         public List<WorldInstanceUserResponse> friends { get; set; }
         public List<WorldInstanceUserResponse> users { get; set; }
+        public string n_users { get; set; }
+        public string capacity { get; set; }
+
         public string hidden { get; set; }
         public string nonce { get; set; }
     }
